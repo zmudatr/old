@@ -1,30 +1,27 @@
-Generator napisów cyklicznych
-Generator Napisów Cyklicznych jest programowalnym urządzeniem do generowania napisów. Posiada 26 rejestrów, oznaczonych literami od A do Z. Każdy z nich przechowuje jeden napis. Zbiór poleceń dla generatora jest następujący:
-ZERUJ r
-usunięcie zawartości rejestru r
-WYPISZ r
-wpisanie na ekran zawartości rejestru r oraz znaku nowej linii
-ODWROC r
-odwrócenie kolejności napisu w rejestrze r (z ABCDE dostajemy EDCBA)
-USTAW r napis
-wpisanie do rejestru r napisu napis
-PRZESUN r n
-przeniesienie n początkowych znaków rejestru r na jego koniec; dla A=ABCDEF PRZESUN A 2 spowoduje, że A=CDEFAB
-USUN r n
-usunięcie n początkowych znaków rejestru r
-DOKLEJ r s
-doklejenie zawartości rejestru s na koniec rejestru r; po wykonaniu tej operacji rejestr s jest zerowany
-SKOPIUJ r s
-doklejenie zawartości rejestru s na koniec rejestru r; po wykonaniu tej operacji rejestr s zachowuje pierwotną wartość
-MIESZAJ r s
-wstawienie do rejestru r napisu zawierającego na przemian znaki z r i s, gdy zawartość jednego z rejestrów się skończy, dodajemy tylko znaki z drugiego napisu; po wykonaniu tej operacji rejestr s jest zerowany; np. dla A=ABC i B=123 wykonanie MIESZAJ A B spowoduje, że A=A1B2C3 a B=puste
-r i s oznaczają rejestry (jedną z liter od A do Z), w każdym poleceniu r będzie różne od s. Napisami będą ciągi znaków składające się z liter (dużych i małych), cyfr, nawiasów, podkreślnika (_) lub operatorów +, -, *, /.Zaraz po uruchomieniu wszystkie rejestry przechowują puste napisy. Zaimplementuj Generator Napisów Cyklicznych.
-Wejście
-Na wejściu podane będą polecenia dla generatora.
-Wyjście
-Na wyjściu należy wypisać kolejne wyniki operacji WYPISZ.
-Przykład
-Wejście
+# Cyclic Subtitle Generator
+The Cyclic Subtitle Generator is a programmable device for generating subtitles. It has 26 registers, marked with letters from A to Z. Each of them stores one text. The command set for the generator is as follows:
+
+* ZERUJ r delete the contents of the registry 'r'
+* WYPISZ r delete the contents of the registry 'r'
+* ODWROC r reverse order of the string in the r register (from ABCDE we get EDCBA)
+* USTAW r test entering the inscription test in the r register
+* PRZESUN r n moving the n leading characters of the register r to its end; for A = ABCDEF PRZESUN A 2 will make A = CDEFAB
+* USUN r n delete the leading n characters of the register r
+* DOKLEJ r s appending the contents of the s register to the end of the r register; after this operation the s register is cleared
+* SKOPIUJ r s appending the contents of the s register to the end of the r register; after this operation, the s register retains its original value
+* MIESZAJ r s inserting into the r register a string containing alternately characters from r and s, when the contents of one of the registers is over, we only add characters from the second string; after this operation the s register is cleared; e.g. for A = ABC and B = 123 execution of MIESZAJ A B will cause that A = A1B2C3 and B = empty
+
+
+#### r and s are registers (one of the letters from A to Z), in each command r will be different from s. The strings will be strings of characters consisting of letters (uppercase and lowercase), numbers, parentheses, underscore (_) or operators +, -, *, /. Immediately after booting, all registers store empty strings. Implement a Cyclic Subtitle Generator.
+
+### Entry
+#### The input will give the commands for the generator.
+### Exit
+#### Successive results of the operation should be written on the output WYPISZ.
+
+### Example
+### Input
+```
 USTAW A ABCDEF
 WYPISZ A
 PRZESUN A 2
@@ -53,8 +50,10 @@ WYPISZ A
 SKOPIUJ B A
 DOKLEJ A B
 WYPISZ A
+```
 
-Wyjście
+### Output
+```
 ABCDEF
 CDEFAB
 FAB
@@ -66,3 +65,4 @@ BAF
 **
 ****
 ********
+```
