@@ -20,7 +20,7 @@ BBB...CCCC
 The task is to calculate the K-th game turn (the starting board is a zero turn) and find the largest group of living cells on it.
 
 ## Entrance
-The input will indicate the width (x) height (y) of the board and the number of turns K. No dimension will be smaller than 3 and greater than 100, and the number of turns will be between 0 and 10,000. In the following y lines, a description will appear the starting board. Each line will contain x characters. (period) or # (hash). The dot means a dead cell, the # sign means a living cell.
+The input will indicate the width (x) height (y) of the board and the number of turns K. No dimension will be smaller than 3 and greater than 100, and the number of turns will be between 0 and 10,000. In the following y lines, a description will appear the starting board. Each line will contain x characters . (period) or # (hash). The dot means a dead cell, the # sign means a living cell.
 ## Exit
 The output should contain one number - the number of living cells in the largest group in the K-th game turn.
 
